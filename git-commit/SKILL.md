@@ -9,17 +9,29 @@ allowed-tools: Bash
 
 ## Overview
 
-Create standardized, semantic git commits using the Conventional Commits specification. Analyze the actual diff to determine appropriate type, scope, and message.
+Create standardized, semantic git commits using the Conventional Commits specification. Analyze the actual diff to determine appropriate type, scope, and message, then format the final commit as:
+
+- Title
+- A brief about what changed
+- Changes explanation
 
 ## Conventional Commit Format
 
 ```
 <type>[optional scope]: <description>
 
-[optional body]
+[brief summary of what changed]
+
+[changes explanation]
 
 [optional footer(s)]
 ```
+
+Where:
+
+- **Title**: The Conventional Commit subject line.
+- **A brief about what changed**: A short paragraph or 1-2 concise sentences summarizing the overall change.
+- **Changes explanation**: A compact explanation of the main edits, preferably as short bullets when multiple changes need to be called out.
 
 ## Commit Types
 
@@ -89,6 +101,14 @@ Analyze the diff to determine:
 - **Type**: What kind of change is this?
 - **Scope**: What area/module is affected?
 - **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
+- **Brief**: A short summary of the overall change in plain language
+- **Changes explanation**: The key implementation details worth preserving in history
+
+Output the final commit message in this order:
+
+1. Title
+2. A brief about what changed
+3. Changes explanation
 
 ### 4. Execute Commit
 
@@ -100,7 +120,11 @@ git commit -m "<type>[scope]: <description>"
 git commit -m "$(cat <<'EOF'
 <type>[scope]: <description>
 
-<optional body>
+<brief summary of what changed>
+
+Changes explanation:
+- <change detail 1>
+- <change detail 2>
 
 <optional footer>
 EOF
@@ -112,6 +136,7 @@ EOF
 - One logical change per commit
 - Present tense: "add" not "added"
 - Imperative mood: "fix bug" not "fixes bug"
+- Keep the body structured as: brief summary, then changes explanation
 - Reference issues: `Closes #123`, `Refs #456`
 - Keep description under 72 characters
 
