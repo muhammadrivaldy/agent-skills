@@ -35,13 +35,6 @@ Omit this section if no breaking changes.
 - [ ] Integration tests {pass/fail count}
 - [ ] Manual test steps performed: {list}
 
-## Related Issues
-
-- Closes #{N}
-- Refs #{N}
-
-Omit this section if no related issues.
-
 ## Deployment Notes
 
 - **Migrations**: {run manually? auto? rollback command?}
@@ -50,36 +43,27 @@ Omit this section if no related issues.
 - **Rollback**: {steps to revert safely}
 
 Omit this section if nothing special is needed.
-
-## Checklist
-
-- [ ] Code follows project conventions
-- [ ] Self-review completed
-- [ ] No new compiler warnings or errors
-- [ ] Tests added/updated for new code
-- [ ] Documentation updated (if applicable)
 ```
 
 ## Section Inclusion Rules
 
 | Section | Include when |
-|---|---|
+| --- | --- |
 | Summary | Always |
 | Motivation | Always |
 | Key Changes | Always |
 | Breaking Changes | Diff contains API signature changes, DB schema changes, removed exports, or `BREAKING CHANGE` in commit messages |
 | Testing | Always |
-| Related Issues | Only if commit messages reference issues (Closes/Fixes/Refs) |
 | Deployment Notes | Only if diff contains migrations, env var changes, or config changes |
-| Checklist | Always |
 
 ## Title Format
 
-```
+```text
 <type>(<scope>): <description>
 ```
 
 Examples:
+
 - `feat(auth): add JWT token refresh endpoint`
 - `fix(api): handle null user in profile endpoint`
 - `refactor(db): extract connection pool into shared module`

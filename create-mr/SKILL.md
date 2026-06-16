@@ -13,9 +13,13 @@ User says: "create a PR", "create an MR", "open a pull request", "make a merge r
 
 ## Workflow
 
-### 1. Ask target branch
+### 1. Ask target branch — CRITICAL: NEVER SKIP THIS STEP
 
-"Which branch should this merge into?" Default: `main` or `master`.
+**You MUST always ask the user which branch to merge into. Never guess, never default, never infer from `git branch`. You cannot proceed until the user explicitly provides the target branch name.**
+
+Ask: "Which branch should this merge into?"
+
+Repeat the question if the user says something non-committal like "the usual one" or "same as always." You need the exact branch name.
 
 ### 2. Check diff
 
@@ -44,20 +48,21 @@ Verify CLI is installed (`gh --version` or `glab --version`). If missing, error 
 
 From the diff output, determine:
 
-| Property | How |
-|---|---|
-| **Type** | feat/fix/refactor/chore/docs/test/style/perf |
-| **Scope** | Module/directory name from changed files |
-| **Breaking** | `BREAKING CHANGE` in commit msgs or removed public APIs |
-| **Migration** | Presence of migration/DDL files |
-| **New env vars** | `.env.example` or `process.env` additions |
-| **New deps** | `package.json`, `requirements.txt`, `go.mod` changes |
+| Property         | How                                                     |
+| ---------------- | ------------------------------------------------------- |
+| **Type**         | feat/fix/refactor/chore/docs/test/style/perf            |
+| **Scope**        | Module/directory name from changed files                |
+| **Breaking**     | `BREAKING CHANGE` in commit msgs or removed public APIs |
+| **Migration**    | Presence of migration/DDL files                         |
+| **New env vars** | `.env.example` or `process.env` additions               |
+| **New deps**     | `package.json`, `requirements.txt`, `go.mod` changes    |
 
 ### 5. Generate title
 
 Format: `<type>(<scope>): <description>`
 
 Rules:
+
 - Imperative present tense ("add" not "added")
 - Under 72 chars
 - Lowercase after colon
