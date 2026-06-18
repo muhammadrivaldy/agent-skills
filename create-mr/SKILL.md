@@ -1,6 +1,6 @@
 ---
 name: create-mr
-description: Analyze code changes and create GitHub PRs or GitLab MRs with auto-generated title and structured description. Detects platform from remote URL, analyzes git diff against target branch, determines change type/scope/breaking changes. Generates description covering: summary, motivation, key changes, breaking changes, testing, related issues, deployment notes, and checklist. Use when user asks to create a PR, MR, pull request, or merge request.
+description: "Analyze code changes and create GitHub PRs or GitLab MRs with auto-generated title and structured description. Detects platform from remote URL, analyzes git diff against target branch, determines change type/scope/breaking changes. Generates description covering: summary, motivation, key changes, breaking changes, testing, related issues, deployment notes, and checklist. Use when user asks to create a PR, MR, pull request, or merge request."
 ---
 
 # Create MR/PR
