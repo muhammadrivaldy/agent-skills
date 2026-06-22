@@ -2,22 +2,24 @@
 
 Use this template to build the description body. Include only sections with relevant content. Omit empty sections (except Checklist).
 
+**IMPORTANT:** All file names (`auth.go`, `db.ts`) and function/identifier names (`validateInput`, `handleLogin`) in the generated description must be wrapped in backticks so they render as highlighted code in GitHub/GitLab markdown.
+
 ```markdown
 ## Summary
 
-{2-4 sentences: what changed, which system/area, what behavior changed}
+{2-4 sentences: what changed, which system/area, what behavior changed — backtick all file/function names}
 
 ## Motivation
 
-{The problem being solved, user impact, or business context.}
-{If fixing a bug: what went wrong, how it manifested.}
-{If adding a feature: what use case this enables.}
+{The problem being solved, user impact, or business context. Backtick all file/function names.}
+{If fixing a bug: what went wrong, how it manifested — backtick all file/function names.}
+{If adding a feature: what use case this enables — backtick all file/function names.}
 
 ## Key Changes
 
-- `{file_or_area}`: {specific change — 1 line}
-- `{file_or_area}`: {specific change — 1 line}
-- `{file_or_area}`: {specific change — 1 line}
+- `{file_or_area}`: `{specific change — backtick all file/function names}`
+- `{file_or_area}`: `{specific change — backtick all file/function names}`
+- `{file_or_area}`: `{specific change — backtick all file/function names}`
 
 Group by area/module. Use file paths for significant changes, area names for broad ones.
 
@@ -25,22 +27,22 @@ Group by area/module. Use file paths for significant changes, area names for bro
 
 ⚠️ **Breaking Changes**
 
-{Describe the breaking change, migration steps, and how to update existing code.}
+{Describe the breaking change, migration steps, and how to update existing code — backtick all file/function names.}
 
 Omit this section if no breaking changes.
 
 ## Testing
 
-- [ ] Unit tests {pass/fail count}
-- [ ] Integration tests {pass/fail count}
-- [ ] Manual test steps performed: {list}
+- [ ] Unit tests {pass/fail count — backtick test file/function names}
+- [ ] Integration tests {pass/fail count — backtick test file/function names}
+- [ ] Manual test steps performed: {list — backtick script/tool names}
 
 ## Deployment Notes
 
-- **Migrations**: {run manually? auto? rollback command?}
-- **Env vars**: {new vars and their purpose}
-- **Feature flags**: {flag name, default state}
-- **Rollback**: {steps to revert safely}
+- **Migrations**: {run manually? auto? rollback command? — backtick migration file names}
+- **Env vars**: {new vars and their purpose — backtick var names}
+- **Feature flags**: {flag name, default state — backtick flag name}
+- **Rollback**: {steps to revert safely — backtick script/command names}
 
 Omit this section if nothing special is needed.
 ```
